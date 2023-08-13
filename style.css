@@ -88,15 +88,15 @@ body {
   background-color: #313233;
 }
 
-.numbers {
+.input {
   background-color: #3a3b3c;
 }
 
-.numbers:hover {
+.input:hover {
   background-color: #313233;
 }
 
-.numbers:active {
+.input:active {
   background-color: #272829;
 }
 
