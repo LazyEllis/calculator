@@ -24,91 +24,133 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #13262f;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .calculator {
-  display: flex;
-  flex-direction: column;
-  background-color: #202020;
-  padding: 6px;
-  border-radius: 8px;
-  border: 1px solid #9cc8cd;
+  background-color: #13262f;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 0 1 400px;
+  border: 2px solid #3e424a;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+}
+
+.screen {
+  border-radius: 15px;
+  border: 2px solid #3e424a;
 }
 
 .output-screen {
-  text-align: right;
   display: flex;
   flex-direction: row-reverse;
-  height: 43px;
+  text-align: right;
+  height: 25px;
   font-size: 12px;
-  color: #a2a3a3;
   padding-right: 10px;
+  color: #98f1ed;
 }
+
 .output-screen span {
   align-self: flex-end;
 }
 
 .input-screen {
   text-align: right;
-  height: 118px;
-  color: #ffffff;
+  height: 58px;
   font-size: 36px;
   font-weight: 700;
   padding-right: 10px;
+  color: #34e7d9;
+}
+
+.button-grid {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .button-row {
   display: flex;
-  flex-direction: row;
+  gap: 10px;
 }
 
 .button-row button {
-  width: 105px;
-  height: 83px;
+  height: 58px;
+  flex: 1 1 0;
   font-size: 16px;
-  color: #ffffff;
-  border-radius: 8px;
+  border-radius: 15px;
+  border: 2px solid #3e424a;
 }
 
 .operators {
-  background-color: #313233;
+  background-color: #132c39;
+  color: #34e7d9;
 }
 
 .operators:hover {
-  background-color: #3a3b3c;
+  background-color: #13262f;
+  color: #eff5f3;
 }
 
 .operators:active {
-  background-color: #313233;
+  background-color: #132c39;
+  color: #eff5f3;
 }
 
 .input {
-  background-color: #3a3b3c;
+  background-color: #13262f;
+  color: #eff5f3;
 }
 
 .input:hover {
-  background-color: #313233;
+  background-color: #132c39;
+  color: #34e7d9;
 }
 
 .input:active {
-  background-color: #272829;
+  background-color: #13262f;
+  color: #34e7d9;
 }
 
 button.equals {
-  background-color: #9cc8cd;
-  color: #1f2021;
+  background-color: #132c39;
+  color: #f33e41;
 }
 
 button.equals:hover {
-  background-color: #8fb7bb;
+  background-color: #1c313e;
+  color: #f33e41;
 }
 
 button.equals:active {
-  background-color: #82a6aa;
+  background-color: #213643;
+  color: #f33e41;
+}
+
+.footer,
+a {
+  margin-top: 30px;
+  text-decoration: none;
+  color: #34e7d9;
+  text-align: center;
+}
+
+a:hover {
+  border-bottom: 1px solid #34e7d9;
 }
