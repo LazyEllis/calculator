@@ -15,10 +15,14 @@
         </div>
         <div class="button-grid">
           <div class="button-row">
-            <button class="operators" id="percent">%</button>
+            <button data-key="%" class="operators" id="percent">%</button>
             <button class="operators" id="clear-entry">CE</button>
             <button class="operators" id="clear">C</button>
-            <button class="operators" id="backspace">&#9003;</button>
+            <button
+              data-key="Backspace"
+              class="operators"
+              id="backspace"
+            ></button>
           </div>
           <div class="button-row">
             <button class="operators" id="inverse">&#8543;&#119909;</button>
@@ -26,31 +30,31 @@
             <button class="operators" id="square-root">
               &#178;&#8730;&#119909;
             </button>
-            <button class="operators basic-operators">&divide;</button>
+            <button data-key="/" class="operators basic-operators"></button>
           </div>
           <div class="button-row">
-            <button class="input numbers">7</button>
-            <button class="input numbers">8</button>
-            <button class="input numbers">9</button>
-            <button class="operators basic-operators">&times;</button>
+            <button data-key="7" class="input numbers">7</button>
+            <button data-key="8" class="input numbers">8</button>
+            <button data-key="9" class="input numbers">9</button>
+            <button data-key="*" class="operators basic-operators"></button>
           </div>
           <div class="button-row">
-            <button class="input numbers">4</button>
-            <button class="input numbers">5</button>
-            <button class="input numbers">6</button>
-            <button class="operators basic-operators">-</button>
+            <button data-key="4" class="input numbers">4</button>
+            <button data-key="5" class="input numbers">5</button>
+            <button data-key="6" class="input numbers">6</button>
+            <button data-key="-" class="operators basic-operators">-</button>
           </div>
           <div class="button-row">
-            <button class="input numbers">1</button>
-            <button class="input numbers">2</button>
-            <button class="input numbers">3</button>
-            <button class="operators basic-operators">+</button>
+            <button data-key="1" class="input numbers">1</button>
+            <button data-key="2" class="input numbers">2</button>
+            <button data-key="3" class="input numbers">3</button>
+            <button data-key="+" class="operators basic-operators">+</button>
           </div>
           <div class="button-row">
             <button class="input" id="negation">+/-</button>
-            <button class="input numbers">0</button>
-            <button class="input" id="decimal">.</button>
-            <button class="equals">=</button>
+            <button data-key="0" class="input numbers">0</button>
+            <button data-key="." class="input" id="decimal">.</button>
+            <button data-key="=" class="equals">=</button>
           </div>
         </div>
       </div>

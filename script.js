@@ -1,6 +1,7 @@
 let firstNumber;
 let secondNumber;
 let operation;
+
 const numbers = document.querySelectorAll('.numbers');
 const inputScreen = document.querySelector('.input-screen');
 const outputScreen = document.querySelector('.output-screen span');
@@ -15,6 +16,13 @@ const squareButton = document.querySelector('#square');
 const squareRootButton = document.querySelector('#square-root');
 const negationButton = document.querySelector('#negation');
 const decimalButton = document.querySelector('#decimal');
+const divideButton = document.querySelector('[data-key="/"]');
+const multiplyButton = document.querySelector('[data-key="*"]');
+
+// This was done in JS instead of HTML because prettier reformats the HTML and messes up the spacing
+divideButton.textContent = String.fromCharCode(247);
+multiplyButton.textContent = String.fromCharCode(215);
+backspaceButton.textContent = String.fromCharCode(9003);
 
 const add = (firstNum, secondNum) => {
   return firstNum + secondNum;
@@ -185,6 +193,12 @@ const showResult = (e) => {
   }
 };
 
+const clickButton = (e) => {
+  const button = document.querySelector(`button[data-key="${e.key}"]`);
+  if (!button) return;
+  button.click();
+};
+
 numbers.forEach((number) => {
   number.addEventListener('click', inputNumber);
 });
@@ -203,3 +217,4 @@ squareButton.addEventListener('click', squareNumber);
 squareRootButton.addEventListener('click', squareRoot);
 decimalButton.addEventListener('click', addDecimalPoint);
 equalButton.addEventListener('click', showResult);
+window.addEventListener('keydown', clickButton);
