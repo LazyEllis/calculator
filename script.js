@@ -1,13 +1,20 @@
 let firstNumber;
 let secondNumber;
 let operation;
-let numbers = document.querySelectorAll('.numbers');
-let inputScreen = document.querySelector('.input-screen');
-let outputScreen = document.querySelector('.output-screen span');
-let clearEntryButton = document.querySelector('#clear-entry');
-let clearButton = document.querySelector('#clear');
-let basicOperators = document.querySelectorAll('.basic-operators');
-let equalButton = document.querySelector('.equals');
+const numbers = document.querySelectorAll('.numbers');
+const inputScreen = document.querySelector('.input-screen');
+const outputScreen = document.querySelector('.output-screen span');
+const clearEntryButton = document.querySelector('#clear-entry');
+const clearButton = document.querySelector('#clear');
+const basicOperators = document.querySelectorAll('.basic-operators');
+const equalButton = document.querySelector('.equals');
+const percentButton = document.querySelector('#percent');
+const backspaceButton = document.querySelector('#backspace');
+const inverseButton = document.querySelector('#inverse');
+const squareButton = document.querySelector('#square');
+const squareRootButton = document.querySelector('#square-root');
+const negationButton = document.querySelector('#negation');
+const decimalButton = document.querySelector('#decimal');
 
 const add = (firstNum, secondNum) => {
   return firstNum + secondNum;
@@ -94,6 +101,53 @@ const chooseOperator = (e) => {
   }
 };
 
+const findPercent = () => {
+  outputScreen.textContent = `${inputScreen.textContent}% = `;
+  inputScreen.textContent = `${inputScreen.textContent / 100}`;
+  inputScreen.classList.add('result');
+};
+
+const findInverse = () => {
+  outputScreen.textContent = `1/${inputScreen.textContent} = `;
+  inputScreen.textContent = `${1 / inputScreen.textContent}`;
+  inputScreen.classList.add('result');
+};
+
+const squareNumber = () => {
+  outputScreen.textContent = `${inputScreen.textContent}² = `;
+  inputScreen.textContent = `${inputScreen.textContent ** 2}`;
+  inputScreen.classList.add('result');
+};
+
+const squareRoot = () => {
+  outputScreen.textContent = `√${inputScreen.textContent} = `;
+  inputScreen.textContent = `${Math.sqrt(inputScreen.textContent)}`;
+  inputScreen.classList.add('result');
+};
+
+const negate = () => {
+  if (inputScreen.textContent !== '0') {
+    inputScreen.textContent = `${inputScreen.textContent * -1}`;
+  }
+};
+
+const backspace = () => {
+  if (inputScreen.textContent !== '0') {
+    inputScreen.textContent = `${inputScreen.textContent.slice(0, -1)}`;
+
+    // This prevents an empty screen if backspacing a single digit
+    if (inputScreen.textContent === '') {
+      inputScreen.textContent = '0';
+    }
+  }
+};
+
+const addDecimalPoint = () => {
+  if (!inputScreen.textContent.includes('.')) {
+    inputScreen.textContent = `${inputScreen.textContent}.`;
+  }
+};
+
 const clearEntry = () => {
   if (inputScreen.classList.contains('result')) {
     outputScreen.textContent = '';
@@ -113,7 +167,7 @@ const showResult = (e) => {
     }
 
     if (outputScreen.textContent === '') {
-      // This prevents errors if they don;t input an operation i.e displays that 5 = 5
+      // This prevents errors if they don't input an operation i.e displays that 5 = 5
       outputScreen.textContent = `${inputScreen.textContent} ${e.target.textContent}`;
     } else {
       firstNumber = outputScreen.textContent.slice(0, -2);
@@ -141,4 +195,11 @@ basicOperators.forEach((operator) => {
 
 clearEntryButton.addEventListener('click', clearEntry);
 clearButton.addEventListener('click', clear);
+backspaceButton.addEventListener('click', backspace);
+negationButton.addEventListener('click', negate);
+percentButton.addEventListener('click', findPercent);
+inverseButton.addEventListener('click', findInverse);
+squareButton.addEventListener('click', squareNumber);
+squareRootButton.addEventListener('click', squareRoot);
+decimalButton.addEventListener('click', addDecimalPoint);
 equalButton.addEventListener('click', showResult);
